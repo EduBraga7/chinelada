@@ -1,0 +1,30 @@
+# Godot 4+ cache and imported resources
+.godot/
+*.translation
+
+# Exported binaries and release packages
+# (Chinelada.exe has ~112 MB, exceeding GitHub's 100 MB hard limit; releases go to GitHub Releases)
+build/*
+!build/.gdignore
+!build/LEIA-ME.txt
+
+# Automated QA test screenshots and captures
+qa/*
+!qa/.gdignore
+
+# Local saves and temporary files
+*.tmp
+save.json
+save.bak.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.swp
+*~

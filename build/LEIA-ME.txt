@@ -1,0 +1,25 @@
+CHINELADA: HERÓIS DO LAR  -  leia-me rápido
+=============================================
+
+JOGAR NO PC (Windows)
+  Abra build\windows\Chinelada.exe (arquivo único, não precisa instalar).
+  O jogo salva sozinho. Para recomeçar: botão engrenagem > Apagar progresso.
+
+JOGAR NO CELULAR (Android)
+  1. Copie build\android\Chinelada.apk para o celular.
+  2. Abra o arquivo e permita instalar de "fontes desconhecidas" quando o Android pedir.
+  (Com cabo e depuração USB: adb install -r build\android\Chinelada.apk)
+  O APK é assinado com a chave de debug do Android: serve para testar, não para a Play Store.
+  Aviso honesto: ele foi conferido por ferramentas, mas ainda não foi rodado em um aparelho de verdade.
+
+JOGAR NO NAVEGADOR (bônus)
+  A pasta build\web precisa ser servida por HTTP (duplo clique no index.html não funciona).
+
+COMO SE JOGA
+  - A família luta sozinha. Toque em MELHORAR (segure para comprar em sequência) e RECRUTAR.
+  - Chama = Fúria da Mãe | x1 = velocidade | toque na batalha = "dedada" | pegue o Papagaio Dourado!
+  - Saia do jogo: a família continua farmando (até 8 h) e, ao voltar, o Diário da Família mostra tudo.
+  - Códigos de resgate (aba Metas): CHINELADA, VOVO, TOMA, BETA, FAMILIA.
+
+PARA QUEM VAI MEXER NO PROJETO
+  Veja o README.md: estrutura, ferramentas de teste e balanceamento, como exportar e publicar.
