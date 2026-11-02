@@ -13,6 +13,7 @@
 
 ## 📌 Sumário
 - [Visão Geral](#-visão-geral)
+- [Capturas de Tela (Screenshots)](#-capturas-de-tela-screenshots)
 - [Filosofia do Projeto](#-filosofia-do-projeto)
 - [A Família (Heróis)](#-a-família-heróis)
 - [Mundos e Perrengues (Inimigos)](#-mundos-e-perrengues-inimigos)
@@ -42,6 +43,57 @@ Quando você fecha o jogo para viver a sua vida, a família não descansa: atrav
 
 ---
 
+## 📸 Capturas de Tela (Screenshots)
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <b>⚔️ Combate em Tempo Real</b><br><br>
+        <img src="docs/screenshots/01_batalha.png" alt="Combate em Tempo Real" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>🔥 Fúria da Mãe (2x Dano)</b><br><br>
+        <img src="docs/screenshots/02_furia.png" alt="Fúria da Mãe" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>👑 Batalha de Chefão</b><br><br>
+        <img src="docs/screenshots/03_chefao.png" alt="Batalha de Chefão" width="240"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="33%">
+        <b>📜 Diário da Família (Offline)</b><br><br>
+        <img src="docs/screenshots/04_diario_offline.png" alt="Diário da Família" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>🍲 Marmita da Vovó (Gacha)</b><br><br>
+        <img src="docs/screenshots/05_marmita_gacha.png" alt="Marmita da Vovó" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>✨ Árvore de Bênçãos (Prestígio)</b><br><br>
+        <img src="docs/screenshots/06_arvore_bencaos.png" alt="Árvore de Bênçãos" width="240"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="33%">
+        <b>🎯 Metas e Missões Diárias</b><br><br>
+        <img src="docs/screenshots/07_metas_missoes.png" alt="Metas e Missões Diárias" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>📖 Bestiário dos Perrengues</b><br><br>
+        <img src="docs/screenshots/08_bestiario.png" alt="Bestiário" width="240"/>
+      </td>
+      <td align="center" width="33%">
+        <b>📷 Foto de Família (Compartilhar)</b><br><br>
+        <img src="docs/screenshots/09_foto_familia.png" alt="Foto de Família" width="240"/>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ## 💡 Filosofia do Projeto
 
 - **100% Autoral e Independente:** Todo o código, arte e áudio foram criados do zero para o jogo.
@@ -50,6 +102,7 @@ Quando você fecha o jogo para viver a sua vida, a família não descansa: atrav
 - **Zero Predação / Zero Monetização Abusiva:** Sem anúncios obrigatórios, sem compras no aplicativo (IAP), sem timers predatórios de energia e sem conexão com a internet exigida.
 - **Privacidade Total:** Zero rastreamento, zero telemetria e nenhuma permissão além de vibração tátil (*haptics*).
 - **Simulação Headless Determinística:** A lógica de combate (`BattleSim`) e progressão não depende de nós da `SceneTree` do Godot. Isso permite que a simulação de farm offline, bots de balanceamento e testes unitários usem exatamente as mesmas regras matemáticas do jogo em tempo real.
+- **Navegação 100% Fluida por Toque:** Toda a interface foi pensada para toque no celular (*touch-first*), com rolagem suave por gestos em qualquer ponto da tela e sem barras de rolagem visíveis.
 
 ---
 
@@ -99,13 +152,13 @@ O jogo conta com 5 mundos temáticos de 20 estágios cada (totalizando 100 está
 ## ⚙️ Sistemas e Mecânicas
 
 ### Combate e Automação
-- **Batalha Automática:** A família luta sozinha em tempo real.
+- **Batalha Automática:** A família luta sozinha em tempo real com posicionamento dinâmico.
 - **Melhorias em Bloco (Hold-to-buy):** Toque e segure no botão **MELHORAR** para evoluir níveis rapidamente em múltiplos de 1x, 10x, 100x ou no MÁXIMO possível.
 - **Auto-Melhorar:** Desbloqueado no estágio 11, compra melhorias de acordo com os pesos ideais dos heróis.
 - **Auto-Avançar & Auto-Chefão:** Avança automaticamente pelos estágios. Em caso de derrota na fronteira, o jogo volta para farmar o estágio anterior e tenta novamente de forma inteligente quando o poder do time ultrapassar 15% do poder da derrota.
 
 ### Fúria da Mãe e Ações Interativas
-- **Fúria da Mãe:** O medidor carrega conforme o combate acontece. Ao ativar (ou via talento de auto-fúria), o time ganha ataque dobrado por 8 segundos!
+- **Fúria da Mãe:** O medidor carrega conforme o combate acontece. Ao ativar (ou via talento de auto-fúria), o time ganha ataque dobrado por 8 segundos com efeitos de chamas!
 - **A "Dedada" (Tap Dano):** Toque diretamente nos inimigos na tela de combate para desferir chineladas manuais extras baseadas na média de ataque do grupo.
 - **Papagaio Dourado:** Um papagaio lendário que sobrevoa a tela aleatoriamente — toque nele rapidamente para coletar uma montanha de ouro ou Pães de Queijo!
 
@@ -143,6 +196,8 @@ chinelada/
 ├── audio/
 │   ├── music/          # Trilhas musicais em WAV sintetizadas matematicamente em loop
 │   └── sfx/            # 19 efeitos sonoros sintetizados em WAV (44.1 kHz)
+├── docs/
+│   └── screenshots/    # Capturas de tela em alta definição para documentação
 ├── fonts/              # Fonte Fredoka (Licença SIL Open Font License - OFL)
 ├── icon/               # Ícones do aplicativo para Android (adaptativos), Windows e Web
 ├── scenes/
