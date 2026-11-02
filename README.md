@@ -1,4 +1,4 @@
-# 🩴 Chinelada: Heróis do Lar
+# Chinelada: Heróis do Lar
 
 > **Idle RPG brasileiro feito em Godot 4.7.** A família defende o lar contra os perrengues do cotidiano — e continua farmando mesmo com o app fechado!
 
