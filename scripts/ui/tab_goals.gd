@@ -156,6 +156,7 @@ class DayCard extends PanelContainer:
 		day = d
 
 	func build() -> void:
+		mouse_filter = Control.MOUSE_FILTER_PASS
 		custom_minimum_size = Vector2(0, 118)
 		var rw: Array = Goals.LOGIN[day - 1]
 		var v := Kit.vbox(0)
@@ -203,6 +204,7 @@ class GoalRow extends PanelContainer:
 	var _mi := -1
 
 	func _base() -> void:
+		mouse_filter = Control.MOUSE_FILTER_PASS
 		add_theme_stylebox_override("panel", Kit.box(Pal.PANEL, 20))
 		var m := MarginContainer.new()
 		for k in ["left", "right", "top", "bottom"]:

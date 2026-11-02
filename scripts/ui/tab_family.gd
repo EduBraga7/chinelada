@@ -42,13 +42,9 @@ func build() -> void:
 	_slots_lbl = Kit.label("", 20, Pal.TEXT_DIM, 4, 600)
 	add_child(_slots_lbl)
 	# --- lista ---
-	var sc := ScrollContainer.new()
-	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	add_child(sc)
-	_list = Kit.vbox(10)
-	_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	sc.add_child(_list)
+	var s := Kit.scroll(10)
+	add_child(s[0])
+	_list = s[1]
 	for id in HeroDefs.IDS:
 		var c := HeroCard.new(id)
 		_list.add_child(c)
@@ -107,6 +103,7 @@ class HeroCard extends PanelContainer:
 		id = p_id
 
 	func build() -> void:
+		mouse_filter = Control.MOUSE_FILTER_PASS
 		add_theme_stylebox_override("panel", Kit.box(Pal.PANEL, 24))
 		custom_minimum_size = Vector2(0, 150)
 		var m := MarginContainer.new()

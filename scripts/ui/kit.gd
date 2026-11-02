@@ -87,6 +87,7 @@ static func button(text: String, kind: String = "green", size: int = 28, min_siz
 
 static func panel(color: Color = Pal.PANEL, radius: int = 26, margin: int = 14, border: Color = Color(0, 0, 0, 0), bw: int = 0) -> PanelContainer:
 	var p := PanelContainer.new()
+	p.mouse_filter = Control.MOUSE_FILTER_PASS
 	var sb := box(color, radius)
 	sb.set_content_margin_all(margin)
 	if bw > 0:
@@ -161,11 +162,29 @@ static func cost_button(icon_name: String, kind: String = "green", size_px: int 
 	return b
 
 
+static func setup_touch_scroll(sc: ScrollContainer) -> void:
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	sc.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	sc.scroll_deadzone = 8
+	var vb := sc.get_v_scroll_bar()
+	if vb != null:
+		vb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		vb.custom_minimum_size = Vector2.ZERO
+		vb.visible = false
+		vb.modulate.a = 0.0
+	var hb := sc.get_h_scroll_bar()
+	if hb != null:
+		hb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		hb.custom_minimum_size = Vector2.ZERO
+		hb.visible = false
+		hb.modulate.a = 0.0
+
+
 static func scroll(sep: int = 10) -> Array:
 	var sc := ScrollContainer.new()
 	sc.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	sc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	setup_touch_scroll(sc)
 	var v := vbox(sep)
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sc.add_child(v)
@@ -243,6 +262,8 @@ class HoldButton extends Button:
 	func _ready() -> void:
 		button_down.connect(_on_down)
 		button_up.connect(_on_up)
+		mouse_exited.connect(_on_up)
+		focus_exited.connect(_on_up)
 		set_process(false)
 
 	func _on_down() -> void:

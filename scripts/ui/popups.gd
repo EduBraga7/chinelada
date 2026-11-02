@@ -206,7 +206,7 @@ func offline(report: Dictionary, diary: Array) -> void:
 func settings() -> void:
 	var sc := ScrollContainer.new()
 	sc.custom_minimum_size = Vector2(560, minf(size.y * 0.62, 760))
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	Kit.setup_touch_scroll(sc)
 	var v := Kit.vbox(12)
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sc.add_child(v)
@@ -347,7 +347,7 @@ func marmita_reveal(results: Array) -> void:
 func bestiary() -> void:
 	var sc := ScrollContainer.new()
 	sc.custom_minimum_size = Vector2(580, minf(size.y * 0.6, 740))
-	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	Kit.setup_touch_scroll(sc)
 	var v := Kit.vbox(10)
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sc.add_child(v)

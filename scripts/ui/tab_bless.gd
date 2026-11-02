@@ -101,6 +101,7 @@ class TalentRow extends PanelContainer:
 		id = p_id
 
 	func build() -> void:
+		mouse_filter = Control.MOUSE_FILTER_PASS
 		add_theme_stylebox_override("panel", Kit.box(Pal.PANEL, 22))
 		var m := MarginContainer.new()
 		for k in ["left", "right", "top", "bottom"]:
